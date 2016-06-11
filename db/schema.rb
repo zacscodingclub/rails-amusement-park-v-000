@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703140419) do
+ActiveRecord::Schema.define(version: 20160610184408) do
 
   create_table "attractions", force: :cascade do |t|
     t.string  "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140703140419) do
     t.integer "height"
     t.integer "tickets"
     t.integer "role"
+    t.boolean "admin",           default: false
   end
 
 end

@@ -1,0 +1,20 @@
+<h1>Listing Attractions</h1>
+  <%= add_new_attraction_tag %>
+<table>
+  <tbody class="text-center">
+    <tr>
+      <td><strong>Picture</strong></td>
+      <td><strong>Name</strong></td>
+      <td><strong>Tickets</strong></td>
+      <td><strong>Details</strong></td>
+    </tr>
+    <% @attractions.each do |attraction| %>
+      <tr>
+        <td><%= image_tag "http://www.allthingsclipart.com/05/amusement.park.05.jpg", width: "100" %></td>
+        <td><%= attraction.name %></td>
+        <td><%= attraction.tickets %></td>
+        <td><%= index_link_tag(attraction) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

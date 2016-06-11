@@ -2,11 +2,15 @@ class User < ActiveRecord::Base
   has_many :rides
   has_many :attractions, through: :rides
   has_secure_password
-  enum role: [:user, :admin]
-  after_initialize :init_role
+
+  def mood
+    if (happiness && nausea) && (happiness > nausea)
+      'happy'
+    else
+      'sad'
+    end
+  end
 
   private
-    def init_role
-      self.role = 0
-    end
+
 end
